@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h1>Form</h1>
+
+    <form action="" class="form">
+        {% csrf_token %}
+        {{ form | safe}}
+
+    </form>
+
+{% endblock content %}
