@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from poll.views import make_poll
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('poll/make/', make_poll, name='make_poll')
 ]

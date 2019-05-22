@@ -7,7 +7,7 @@ def make_poll(request):
 
     if request.method == 'POST':
 
-        form = PollForm(request.POST):
+        form = PollForm(request.POST)
 
         if form.is_valid():
             print('form is valid')
