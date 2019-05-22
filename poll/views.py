@@ -11,6 +11,8 @@ def make_poll(request):
 
         if form.is_valid():
             print('form is valid')
+            form.save()
+            print('form is saved')
             return HttpResponse('Success')
 
     else:
