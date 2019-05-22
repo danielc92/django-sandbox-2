@@ -14,3 +14,5 @@ class PollForm(forms.ModelForm):
         model = Poll
         fields = ['poll_question',
                   'poll_creator']
+
+
