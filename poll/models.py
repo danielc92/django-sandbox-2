@@ -4,7 +4,7 @@ from django.db import models
 class Choice(models.Model):
 
     choice_name = models.CharField(max_length=255)
-    choice_added = models.DateTimeField(auto_now=True)
+    choice_created = models.DateTimeField(auto_now=True)
 
 
 class Poll(models.Model):
