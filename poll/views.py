@@ -69,4 +69,4 @@ def make_emp(request):
 
     context = {'form' : bulmafy(form)}
 
-    return render(request, 'make_poll.html', context)
+    return render(request, 'make_emp.html', context)
