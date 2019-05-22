@@ -1,6 +1,11 @@
 from django import forms
 
-from .models import Choice, Poll
+from .models import Choice, Poll, Employment
+
+class EmpForm(forms.ModelForm):
+    class Meta:
+        model = Employment
+        fields = ['first', 'last', 'emp_status', 'age']
 
 
 class ChoiceForm(forms.ModelForm):
