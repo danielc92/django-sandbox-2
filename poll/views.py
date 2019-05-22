@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import PollForm, ChoiceForm
+from .forms import PollForm, ChoiceForm, EmpForm
 
 
 # Create your views here.
@@ -43,6 +43,29 @@ def make_poll(request):
     else:
 
         form = PollForm()
+
+    context = {'form' : bulmafy(form)}
+
+    return render(request, 'make_poll.html', context)
+
+
+def make_emp(request):
+
+    if request.method == 'POST':
+
+        form = EmpForm(request.POST)
+
+        if form.is_valid():
+
+            return HttpResponse('Success')
+
+        else:
+            errors = form.errors
+            return HttpResponse('Error')
+
+    else:
+
+        form = EmpForm()
 
     context = {'form' : bulmafy(form)}
 
