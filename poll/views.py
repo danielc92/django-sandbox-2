@@ -1,7 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import PollForm, ChoiceForm
+
+
 # Create your views here.
+def bulmafy(form):
+    form = form.as_p()
+    form = form.replace('<label', '<label class="label"')
+    form = form.replace('<input', '<input class="input"')
+
+    return form
+
+from .models import Poll, Choice
 
 def make_poll(request):
 
@@ -10,15 +20,30 @@ def make_poll(request):
         form = PollForm(request.POST)
 
         if form.is_valid():
-            print('form is valid')
-            form.save()
-            print('form is saved')
+            # First create the Poll
+            poll = Poll(**form.cleaned_data)
+            poll.save()
+            print('Poll has been saved')
+
+            for choice_id in ['choice-1', 'choice-2', 'choice-3', 'choice-4']:
+                content = request.POST.get(choice_id)
+                content = content.strip()
+                if len(content) > 0 and len(content) < 100:
+                    choice = Choice(choice_name=content, poll_question=poll)
+                    choice.save()
+                    print('Choice has been saved')
+
             return HttpResponse('Success')
+
+        else:
+            errors = form.errors
+            print(errors)
+            return HttpResponse('Error')
 
     else:
 
         form = PollForm()
 
-    context = {'form' : form}
+    context = {'form' : bulmafy(form)}
 
     return render(request, 'make_poll.html', context)

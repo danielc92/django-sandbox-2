@@ -2,13 +2,28 @@
 
 
 {% block content %}
-
+    <div class="content">
     <h1>Form</h1>
 
-    <form action="" class="form">
+    <form action="" class="form" method="POST">
         {% csrf_token %}
         {{ form | safe}}
+        <p class="help">At least 2 choices are required</p>
+        <label for="" class="label">Choice 1</label>
+        <input type="text" name="choice-1" required class="input">
+
+        <label for="" class="label">Choice 2</label>
+        <input type="text" name="choice-2" required class="input">
+
+        <label for="" class="label">Choice 3</label>
+        <input type="text" name="choice-3" class="input">
+
+        <label for="" class="label">Choice 4</label>
+        <input type="text" name="choice-4" class="input">
+
+
         <button class="button" type="submit">Submit</button>
     </form>
 
+</div>
 {% endblock content %}
