@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from poll.views import make_poll, make_emp
+from poll.views import make_poll, make_emp, make_emp_manual
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('poll/make/', make_poll, name='make_poll'),
-    path('emp/make/', make_emp, name='make_emp')
+    path('emp/make/', make_emp, name='make_emp'),
+    path('emp/make/manual/', make_emp_manual, name='make_emp_manual')
 ]

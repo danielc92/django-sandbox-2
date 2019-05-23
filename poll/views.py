@@ -80,7 +80,7 @@ def make_emp_manual(request):
         form = EmpForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            
             return HttpResponse('Success')
 
         else:

@@ -7,11 +7,30 @@
 
     <form action="" class="form" method="POST">
         {% csrf_token %}
+        {{ form.non_field_errors }}
 
-        <label for="{{ form.first.id_label_for }}" class="label">First Name</label>
-        {{ form.first }}
+        <label for="{{ form.first.id_for_label }}" class="label">First Name</label>
+        <input type="text" id="{{ form.first.id_for_label }}" class="input">
+        <p class="help has-text-danger">{{ form.first.errors }}</p>
 
-        <button class="button" type="submit">Submit</button>
+        <label for="{{ form.last.id_for_label }}" class="label">Last Name</label>
+        <input type="text" id="{{ form.last.id_for_label }}" class="input">
+        <p class="help has-text-danger">{{ form.last.errors }}</p>
+
+        <label for="{{ form.emp_status.id_for_label }}" class="label">Employment status</label>
+        {{ form.emp_status }}
+        <p class="help has-text-danger">{{ form.emp_status.errors }}</p>
+
+        <label for="{{ form.age.id_for_label }}" class="label">Age (DOB)</label>
+        <input type="date" id="{{ form.age.id_for_label }}" class="input">
+        <p class="help has-text-danger">{{ form.age.errors }}</p>
+
+        <label for="{{ form.suburb.id_for_label }}" class="label">Suburb</label>
+        {{ form.suburb }}
+        <p class="help has-text-danger">{{ form.suburb.errors }}</p>
+
+
+        <button style="margin-top: 1rem;" class="button" type="submit">Submit</button>
     </form>
 
 </div>
