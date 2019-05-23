@@ -10,11 +10,11 @@
         {{ form.non_field_errors }}
 
         <label for="{{ form.first.id_for_label }}" class="label">First Name</label>
-        <input type="text" id="{{ form.first.id_for_label }}" class="input">
+        {{ form.first }}
         <p class="help has-text-danger">{{ form.first.errors }}</p>
 
         <label for="{{ form.last.id_for_label }}" class="label">Last Name</label>
-        <input type="text" id="{{ form.last.id_for_label }}" class="input">
+        {{ form.last }}
         <p class="help has-text-danger">{{ form.last.errors }}</p>
 
         <label for="{{ form.emp_status.id_for_label }}" class="label">Employment status</label>
@@ -22,7 +22,7 @@
         <p class="help has-text-danger">{{ form.emp_status.errors }}</p>
 
         <label for="{{ form.age.id_for_label }}" class="label">Age (DOB)</label>
-        <input type="date" id="{{ form.age.id_for_label }}" class="input">
+        {{ form.age }}
         <p class="help has-text-danger">{{ form.age.errors }}</p>
 
         <label for="{{ form.suburb.id_for_label }}" class="label">Suburb</label>
