@@ -36,6 +36,5 @@ class Employment(models.Model):
 
     first = models.CharField(max_length=100)
     last = models.CharField(max_length=100)
-    emp_status = models.CharField(choices=EMP_CHOICES, max_length=2, default=STUDENT)
+    emp_status = models.CharField(choices=EMP_CHOICES, max_length=3, default=STUDENT)
     age = models.DateField()
-    

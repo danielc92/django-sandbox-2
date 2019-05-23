@@ -61,6 +61,7 @@ def make_emp(request):
 
         else:
             errors = form.errors
+            print(errors)
             return HttpResponse('Error')
 
     else:
