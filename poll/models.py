@@ -10,6 +10,7 @@ class Poll(models.Model):
     def __str__(self):
         return self.poll_question
 
+
 class Choice(models.Model):
 
     choice_name = models.CharField(max_length=255)
@@ -19,6 +20,10 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_name
+
+class Suburb(models.Model):
+    suburb_name=CharField(max_length=40)
+
 
 class Employment(models.Model):
 
@@ -34,7 +39,10 @@ class Employment(models.Model):
         (STUDENT, 'I am a student')
     ]
 
+
     first = models.CharField(max_length=100)
     last = models.CharField(max_length=100)
     emp_status = models.CharField(choices=EMP_CHOICES, max_length=3, default=STUDENT)
     age = models.DateField()
+    suburb = models.ManyToManyField(Suburb)
+
