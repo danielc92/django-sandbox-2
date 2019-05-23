@@ -72,3 +72,27 @@ def make_emp(request):
     context = {'form' : form}
 
     return render(request, 'make_emp.html', context)
+
+def make_emp_manual(request):
+
+    if request.method == 'POST':
+
+        form = EmpForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Success')
+
+        else:
+            errors = form.errors
+            print(errors)
+            return HttpResponse('Error')
+
+    else:
+
+        form = EmpForm()
+        print(form)
+
+    context = {'form' : form}
+
+    return render(request, 'manual-form.html', context)
