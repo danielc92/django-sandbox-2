@@ -22,8 +22,13 @@ class Choice(models.Model):
         return self.choice_name
 
 class Suburb(models.Model):
-    suburb_name=CharField(max_length=40)
+    suburb_name=models.CharField(max_length=40)
 
+    def __str__(self):
+        return self.suburb_name
+
+    class Meta:
+        ordering = ['suburb_name']
 
 class Employment(models.Model):
 

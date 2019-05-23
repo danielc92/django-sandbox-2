@@ -56,7 +56,7 @@ def make_emp(request):
         form = EmpForm(request.POST)
 
         if form.is_valid():
-
+            form.save()
             return HttpResponse('Success')
 
         else:
@@ -67,7 +67,8 @@ def make_emp(request):
     else:
 
         form = EmpForm()
+        print(form)
 
-    context = {'form' : bulmafy(form)}
+    context = {'form' : form}
 
     return render(request, 'make_emp.html', context)
