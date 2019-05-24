@@ -10,7 +10,7 @@ Concepts covered in this project:
 # Setup
 **How to obtain this repository:**
 ```sh
-git clone https://github.com/danielc92/django-sandbox.git
+git clone https://github.com/danielc92/django-sandbox-2.git
 ```
 
 **This project uses a python 3.7 virtual environment**
