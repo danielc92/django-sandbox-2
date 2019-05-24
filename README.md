@@ -1,4 +1,4 @@
-# Project Title
+# Django Sandbox 2
 Another sandbox project to test functionality of Django Framework.
 
 # Before you get started
@@ -6,6 +6,7 @@ Concepts covered in this project:
 - Rendering forms manually
 - Rendering many-to-one forms in one page method
 - Rendering DateTime fields properly
+- Using checkboxes with ManyToManyFields
 
 # Setup
 **How to obtain this repository:**
@@ -31,6 +32,7 @@ python manage.py migrate
 - Render form contents manually to fine tune appearance
 - Render contents of form with many-to-one relationship in a single form without using form.save() method
 - Use DateInput to render a DateTime field properly (it does not set type attribute to "date" by default)
+- Rendered checkboxes with ManyToManyField form
 
 
 # Contributors
